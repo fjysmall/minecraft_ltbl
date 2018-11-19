@@ -35,9 +35,9 @@ public class LtblCommandExecutor implements CommandExecutor {
                 if (this.player2Task.containsKey(player.getName())) {
                     this.player2Task.get(player.getName()).cancel();
                     this.player2Task.remove(player.getName());
+                    sender.sendMessage("LTBL switch off");
                 }
                 else {
-
                     this.player2Task.put(
                         player.getName(),
                         new BukkitRunnable() {
@@ -69,10 +69,10 @@ public class LtblCommandExecutor implements CommandExecutor {
                                             if (block.getLightFromBlocks() <= 7) {
                                                 Location displayLocation = block.getLocation();
                                                 displayLocation.setX(displayLocation.getX() + 0.5);
-                                                displayLocation.setY(displayLocation.getY() + 0.1);
+                                                displayLocation.setY(displayLocation.getY() + 0.5);
                                                 displayLocation.setZ(displayLocation.getZ() + 0.5);
                                                 // default FLAME 26
-                                                ParticleUtil.sendParticle(player, displayLocation, 26, 0, 0);
+                                                ParticleUtil.sendParticle(player, displayLocation, 35, 0, 0);
                                             }
                                         }
                                     }
@@ -81,7 +81,9 @@ public class LtblCommandExecutor implements CommandExecutor {
                         }
                     );
 
-                    this.player2Task.get(player.getName()).runTaskTimerAsynchronously(this.plugin, 16, 64);
+                    this.player2Task.get(player.getName()).runTaskTimerAsynchronously(this.plugin, 0, 64);
+
+                    sender.sendMessage("LTBL switch on");
                 }
 
                 return true;
