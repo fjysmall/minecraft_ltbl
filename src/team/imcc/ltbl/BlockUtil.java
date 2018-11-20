@@ -11,8 +11,21 @@ public class BlockUtil {
 
     public static boolean isSpawnableBlock(Block block) {
 
-        if (block.getType() != Material.AIR) {
-            return false;
+        switch (block.getType()) {
+            case AIR:
+            case SIGN_POST:
+            case DOUBLE_PLANT:
+            case RED_ROSE:
+            case YELLOW_FLOWER:
+            case LONG_GRASS:
+            case BROWN_MUSHROOM:
+            case RED_MUSHROOM:
+            case STANDING_BANNER:
+            case SAPLING:
+            case DEAD_BUSH:
+                break;
+            default:
+                return false;
         }
 
         if (block.getRelative(BlockFace.DOWN).isLiquid()) {
@@ -28,16 +41,13 @@ public class BlockUtil {
         switch (material) {
             case AIR:
             case GLASS:
-            case LONG_GRASS:
             case STAINED_GLASS:
             case STAINED_GLASS_PANE:
             case THIN_GLASS:
             case LEAVES:
             case LEAVES_2:
-            case RED_ROSE:
+            case CHORUS_FLOWER:
             case CHORUS_PLANT:
-            case DOUBLE_PLANT:
-            case COBBLE_WALL:
                 return false;
         }
 
@@ -106,6 +116,7 @@ public class BlockUtil {
             case STONE_PLATE:
             case IRON_PLATE:
             case WOOD_PLATE:
+            case COBBLE_WALL:
                 return false;
         }
 
@@ -118,8 +129,28 @@ public class BlockUtil {
         }
 
         switch (material) {
+            case BLACK_SHULKER_BOX:
+            case BLUE_SHULKER_BOX:
+            case BROWN_SHULKER_BOX:
+            case CYAN_SHULKER_BOX:
+            case GRAY_SHULKER_BOX:
+            case GREEN_SHULKER_BOX:
+            case LIGHT_BLUE_SHULKER_BOX:
+            case LIME_SHULKER_BOX:
+            case MAGENTA_SHULKER_BOX:
+            case ORANGE_SHULKER_BOX:
+            case PINK_SHULKER_BOX:
+            case PURPLE_SHULKER_BOX:
+            case RED_SHULKER_BOX:
+            case SILVER_SHULKER_BOX:
+            case WHITE_SHULKER_BOX:
+            case YELLOW_SHULKER_BOX:
+                return false;
+        }
+
+        switch (material) {
             case ANVIL:
-            case BED:
+            case BED_BLOCK:
             case CHEST:
             case TRAPPED_CHEST:
             case ENDER_CHEST:
@@ -138,6 +169,17 @@ public class BlockUtil {
             case VINE:
             case FLOWER_POT:
             case WEB:
+            case BEDROCK:
+            case CACTUS:
+            case ITEM_FRAME:
+            case ENDER_PORTAL_FRAME:
+            case WALL_SIGN:
+            case WALL_BANNER:
+            case SIGN_POST:
+            case STANDING_BANNER:
+            case CAULDRON:
+            case BREWING_STAND:
+            case BEACON:
                 return false;
         }
 
