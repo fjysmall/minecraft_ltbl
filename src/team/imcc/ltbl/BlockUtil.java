@@ -1,6 +1,7 @@
 package team.imcc.ltbl;
 
 import org.bukkit.Material;
+import org.bukkit.block.Biome;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.material.Stairs;
@@ -10,6 +11,14 @@ import org.bukkit.material.WoodenStep;
 public class BlockUtil {
 
     public static boolean isSpawnableBlock(Block block) {
+
+        Biome biome = block.getBiome();
+        switch (biome) {
+            case VOID:
+            case MUSHROOM_ISLAND:
+            case MUSHROOM_ISLAND_SHORE:
+                return false;
+        }
 
         switch (block.getType()) {
             case AIR:

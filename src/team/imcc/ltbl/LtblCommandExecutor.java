@@ -66,14 +66,15 @@ public class LtblCommandExecutor implements CommandExecutor {
                                                continue;
                                             }
 
-                                            if (block.getLightFromBlocks() <= 7) {
-                                                Location displayLocation = block.getLocation();
-                                                displayLocation.setX(displayLocation.getX() + 0.5);
-                                                displayLocation.setY(displayLocation.getY() + 0.5);
-                                                displayLocation.setZ(displayLocation.getZ() + 0.5);
-                                                // default FLAME 26
-                                                ParticleUtil.sendParticle(player, displayLocation, 35, 0, 0);
+                                            if (block.getLightFromBlocks() > 7) {
+                                                continue;
                                             }
+
+                                            Location displayLocation = block.getLocation();
+                                            displayLocation.setX(displayLocation.getX() + 0.5);
+                                            displayLocation.setY(displayLocation.getY() + 0.5);
+                                            displayLocation.setZ(displayLocation.getZ() + 0.5);
+                                            ParticleUtil.sendParticle(player, displayLocation, 35, 0, 0);
                                         }
                                     }
                                 }
