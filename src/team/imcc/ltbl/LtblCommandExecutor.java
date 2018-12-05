@@ -1,6 +1,7 @@
 package team.imcc.ltbl;
 
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -51,6 +52,10 @@ public class LtblCommandExecutor implements CommandExecutor {
                                     return;
                                 }
 
+                                if (!player.getWorld().getEnvironment().equals(World.Environment.NORMAL)) {
+                                    return;
+                                }
+
                                 int radius = 64;
                                 for (int i = -radius; i <= radius; i++) {
                                     for (int j = -radius; j <= radius; j++) {
@@ -62,6 +67,7 @@ public class LtblCommandExecutor implements CommandExecutor {
                                             location.setZ(location.getZ() + k);
 
                                             Block block = player.getWorld().getBlockAt(location);
+
                                             if (!BlockUtil.isSpawnableBlock(block)) {
                                                continue;
                                             }
