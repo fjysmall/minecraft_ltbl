@@ -13,9 +13,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="craftbukkit-1.12" level="project" />
     <orderEntry type="module-library">
-      <library name="Maven: org.bukkit:craftbukkit:1.12-R0.1-SNAPSHOT">
+      <library name="Maven: org.bukkit:craftbukkit:1.14.4-R0.1-SNAPSHOT">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/craftbukkit-1.12.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/craftbukkit-1.14.4-R0.1-SNAPSHOT.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -13,8 +13,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         getLogger().info("onEnable has been invoked!");
 
-        // TODO (jyfeng)
-        getCommand("ltbl").setExecutor(new LtblCommandExecutor(this));
+        getCommand("ltbl").setExecutor(new LCommandExecutor(this));
     }
 
     @Override
