@@ -99,10 +99,107 @@ public class LCommandTask extends BukkitRunnable {
         if (footer.isLiquid()) {
             return false;
         }
-        if (footer.getType().isSolid()) {
-            return true;
+        if (isOnSpawnBlock(footer)) {
+            return false;
         }
-        return false;
+        if (!footer.getType().isSolid()) {
+            return false;
+        }
+        switch (footer.getType()) {
+            case CHEST:
+            case CHEST_MINECART:
+            case ACACIA_FENCE:
+            case BIRCH_FENCE:
+            case DARK_OAK_FENCE:
+            case JUNGLE_FENCE:
+            case NETHER_BRICK_FENCE:
+            case OAK_FENCE:
+            case SPRUCE_FENCE:
+            case ACACIA_FENCE_GATE:
+            case BIRCH_FENCE_GATE:
+            case DARK_OAK_FENCE_GATE:
+            case JUNGLE_FENCE_GATE:
+            case OAK_FENCE_GATE:
+            case SPRUCE_FENCE_GATE:
+                return false;
+        }
+        switch (footer.getType()) {
+            case SANDSTONE_SLAB:
+            case SMOOTH_QUARTZ_SLAB:
+            case SMOOTH_RED_SANDSTONE_SLAB:
+            case SMOOTH_SANDSTONE_SLAB:
+            case ACACIA_SLAB:
+            case ANDESITE_SLAB:
+            case SMOOTH_STONE_SLAB:
+            case SPRUCE_SLAB:
+            case BIRCH_SLAB:
+            case STONE_BRICK_SLAB:
+            case STONE_SLAB:
+            case BRICK_SLAB:
+            case COBBLESTONE_SLAB:
+            case CUT_RED_SANDSTONE_SLAB:
+            case CUT_SANDSTONE_SLAB:
+            case DARK_OAK_SLAB:
+            case DARK_PRISMARINE_SLAB:
+            case DIORITE_SLAB:
+            case END_STONE_BRICK_SLAB:
+            case GRANITE_SLAB:
+            case JUNGLE_SLAB:
+            case MOSSY_COBBLESTONE_SLAB:
+            case MOSSY_STONE_BRICK_SLAB:
+            case NETHER_BRICK_SLAB:
+            case OAK_SLAB:
+            case PETRIFIED_OAK_SLAB:
+            case POLISHED_ANDESITE_SLAB:
+            case POLISHED_DIORITE_SLAB:
+            case POLISHED_GRANITE_SLAB:
+            case PRISMARINE_BRICK_SLAB:
+            case PRISMARINE_SLAB:
+            case PURPUR_SLAB:
+            case QUARTZ_SLAB:
+            case RED_NETHER_BRICK_SLAB:
+            case RED_SANDSTONE_SLAB:
+                if (footer.getBlockData().getAsString().contains("type=bottom")) {
+                    return false;
+                }
+        }
+        switch (footer.getType()) {
+            case SANDSTONE_STAIRS:
+            case ACACIA_STAIRS:
+            case SMOOTH_QUARTZ_STAIRS:
+            case SMOOTH_RED_SANDSTONE_STAIRS:
+            case SMOOTH_SANDSTONE_STAIRS:
+            case SPRUCE_STAIRS:
+            case STONE_BRICK_STAIRS:
+            case STONE_STAIRS:
+            case ANDESITE_STAIRS:
+            case BIRCH_STAIRS:
+            case BRICK_STAIRS:
+            case COBBLESTONE_STAIRS:
+            case DARK_OAK_STAIRS:
+            case DARK_PRISMARINE_STAIRS:
+            case DIORITE_STAIRS:
+            case END_STONE_BRICK_STAIRS:
+            case GRANITE_STAIRS:
+            case JUNGLE_STAIRS:
+            case MOSSY_COBBLESTONE_STAIRS:
+            case MOSSY_STONE_BRICK_STAIRS:
+            case NETHER_BRICK_STAIRS:
+            case OAK_STAIRS:
+            case POLISHED_ANDESITE_STAIRS:
+            case POLISHED_DIORITE_STAIRS:
+            case POLISHED_GRANITE_STAIRS:
+            case PRISMARINE_BRICK_STAIRS:
+            case PRISMARINE_STAIRS:
+            case PURPUR_STAIRS:
+            case QUARTZ_STAIRS:
+            case RED_NETHER_BRICK_STAIRS:
+            case RED_SANDSTONE_STAIRS:
+                if (footer.getBlockData().getAsString().contains("half=bottom")) {
+                    return false;
+                }
+        }
+        return true;
     }
 
     public static boolean isTheBlock(Block block) {
