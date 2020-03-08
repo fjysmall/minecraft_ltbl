@@ -105,9 +105,260 @@ public class LCommandTask extends BukkitRunnable {
         if (!footer.getType().isSolid()) {
             return false;
         }
+
+        // special objects
         switch (footer.getType()) {
+            case ANVIL:
+            case CHIPPED_ANVIL:
+            case DAMAGED_ANVIL:
+            case ARMOR_STAND:
+            case BEDROCK:
             case CHEST:
             case CHEST_MINECART:
+            case TRAPPED_CHEST:
+            case ENDER_CHEST:
+            case WRITABLE_BOOK:
+            case MAGMA_BLOCK:
+            case MAGMA_CREAM:
+            case MAGMA_CUBE_SPAWN_EGG:
+            case TNT:
+            case CAKE:
+            case COBWEB:
+            case CACTUS:
+            case ITEM_FRAME:
+            case LADDER:
+            case VINE:
+            case FLOWER_POT:
+            case CARVED_PUMPKIN:
+            case CAULDRON:
+            case BREWING_STAND:
+            case BEACON:
+            case PAINTING:
+            case SCAFFOLDING:
+                return false;
+        }
+
+        // new blocks
+        switch (footer.getType()) {
+            case COMPOSTER:
+            case LECTERN:
+            case CARTOGRAPHY_TABLE:
+            case CRAFTING_TABLE:
+            case ENCHANTING_TABLE:
+            case FLETCHING_TABLE:
+            case SMITHING_TABLE:
+            case LANTERN:
+            case CAMPFIRE:
+            case BELL:
+            case STONECUTTER:
+            case GRINDSTONE:
+                return false;
+        }
+
+        // red stone
+        switch (footer.getType()) {
+            case PISTON:
+            case PISTON_HEAD:
+            case MOVING_PISTON:
+            case STICKY_PISTON:
+            case DAYLIGHT_DETECTOR:
+            case RAIL:
+            case DETECTOR_RAIL:
+            case ACTIVATOR_RAIL:
+            case POWERED_RAIL:
+            case ACACIA_PRESSURE_PLATE:
+            case BIRCH_PRESSURE_PLATE:
+            case DARK_OAK_PRESSURE_PLATE:
+            case HEAVY_WEIGHTED_PRESSURE_PLATE:
+            case JUNGLE_PRESSURE_PLATE:
+            case LIGHT_WEIGHTED_PRESSURE_PLATE:
+            case OAK_PRESSURE_PLATE:
+            case SPRUCE_PRESSURE_PLATE:
+            case STONE_PRESSURE_PLATE:
+                return false;
+        }
+
+        // special road
+        switch (footer.getType()) {
+            case ICE:
+            case BLUE_ICE:
+            case FROSTED_ICE:
+            case PACKED_ICE:
+            case GRASS_PATH:
+            case MYCELIUM:
+                return false;
+        }
+
+        // wall banner
+        switch (footer.getType()) {
+            case WHITE_WALL_BANNER:
+            case BLACK_WALL_BANNER:
+            case BLUE_WALL_BANNER:
+            case BROWN_WALL_BANNER:
+            case CYAN_WALL_BANNER:
+            case GRAY_WALL_BANNER:
+            case GREEN_WALL_BANNER:
+            case LIGHT_BLUE_WALL_BANNER:
+            case LIGHT_GRAY_WALL_BANNER:
+            case LIME_WALL_BANNER:
+            case MAGENTA_WALL_BANNER:
+            case ORANGE_WALL_BANNER:
+            case PINK_WALL_BANNER:
+            case PURPLE_WALL_BANNER:
+            case RED_WALL_BANNER:
+            case YELLOW_WALL_BANNER:
+                return false;
+        }
+
+        // plant
+        switch (footer.getType()) {
+            case LILY_PAD:
+            case LILY_OF_THE_VALLEY:
+            case POTTED_LILY_OF_THE_VALLEY:
+            case POTTED_ACACIA_SAPLING:
+            case POTTED_ALLIUM:
+            case POTTED_AZURE_BLUET:
+            case POTTED_BAMBOO:
+            case POTTED_BIRCH_SAPLING:
+            case POTTED_BLUE_ORCHID:
+            case POTTED_BROWN_MUSHROOM:
+            case POTTED_CACTUS:
+            case POTTED_CORNFLOWER:
+            case POTTED_DANDELION:
+            case POTTED_DARK_OAK_SAPLING:
+            case POTTED_DEAD_BUSH:
+            case POTTED_FERN:
+            case POTTED_JUNGLE_SAPLING:
+            case POTTED_OAK_SAPLING:
+            case POTTED_ORANGE_TULIP:
+            case POTTED_OXEYE_DAISY:
+            case POTTED_PINK_TULIP:
+            case POTTED_POPPY:
+            case POTTED_RED_MUSHROOM:
+            case POTTED_RED_TULIP:
+            case POTTED_SPRUCE_SAPLING:
+            case POTTED_WHITE_TULIP:
+            case POTTED_WITHER_ROSE:
+                return false;
+        }
+
+        // ender
+        switch (footer.getType()) {
+            case END_PORTAL_FRAME:
+            case END_GATEWAY:
+            case END_CRYSTAL:
+            case END_PORTAL:
+                return false;
+        }
+
+        // carpet
+        switch (footer.getType()) {
+            case CYAN_CARPET:
+            case BLACK_CARPET:
+            case BLUE_CARPET:
+            case BROWN_CARPET:
+            case GRAY_CARPET:
+            case GREEN_CARPET:
+            case LIGHT_BLUE_CARPET:
+            case LIGHT_GRAY_CARPET:
+            case LIME_CARPET:
+            case MAGENTA_CARPET:
+            case ORANGE_CARPET:
+            case PINK_CARPET:
+            case PURPLE_CARPET:
+            case RED_CARPET:
+            case WHITE_CARPET:
+            case YELLOW_CARPET:
+                return false;
+        }
+
+        // bed
+        switch (footer.getType()) {
+            case BLACK_BED:
+            case BLUE_BED:
+            case BROWN_BED:
+            case CYAN_BED:
+            case GRAY_BED:
+            case GREEN_BED:
+            case LIGHT_BLUE_BED:
+            case LIGHT_GRAY_BED:
+            case LIME_BED:
+            case MAGENTA_BED:
+            case ORANGE_BED:
+            case PINK_BED:
+            case PURPLE_BED:
+            case RED_BED:
+            case WHITE_BED:
+            case YELLOW_BED:
+                return false;
+        }
+
+        // boxes
+        switch (footer.getType()) {
+            case SHULKER_BOX:
+            case BLACK_SHULKER_BOX:
+            case BLUE_SHULKER_BOX:
+            case BROWN_SHULKER_BOX:
+            case CYAN_SHULKER_BOX:
+            case GRAY_SHULKER_BOX:
+            case GREEN_SHULKER_BOX:
+            case LIGHT_BLUE_SHULKER_BOX:
+            case LIME_SHULKER_BOX:
+            case MAGENTA_SHULKER_BOX:
+            case ORANGE_SHULKER_BOX:
+            case PINK_SHULKER_BOX:
+            case PURPLE_SHULKER_BOX:
+            case RED_SHULKER_BOX:
+            case WHITE_SHULKER_BOX:
+            case YELLOW_SHULKER_BOX:
+            case LIGHT_GRAY_SHULKER_BOX:
+                return false;
+        }
+
+        // glass
+        switch (footer.getType()) {
+            case GLASS:
+            case GLASS_BOTTLE:
+            case GRAY_STAINED_GLASS:
+            case BLACK_STAINED_GLASS:
+            case GREEN_STAINED_GLASS:
+            case BLUE_STAINED_GLASS:
+            case BROWN_STAINED_GLASS:
+            case CYAN_STAINED_GLASS:
+            case LIGHT_BLUE_STAINED_GLASS:
+            case LIGHT_GRAY_STAINED_GLASS:
+            case LIME_STAINED_GLASS:
+            case MAGENTA_STAINED_GLASS:
+            case ORANGE_STAINED_GLASS:
+            case PINK_STAINED_GLASS:
+            case PURPLE_STAINED_GLASS:
+            case RED_STAINED_GLASS:
+            case WHITE_STAINED_GLASS:
+            case YELLOW_STAINED_GLASS:
+            case GLASS_PANE:
+            case GRAY_STAINED_GLASS_PANE:
+            case BLACK_STAINED_GLASS_PANE:
+            case GREEN_STAINED_GLASS_PANE:
+            case BLUE_STAINED_GLASS_PANE:
+            case BROWN_STAINED_GLASS_PANE:
+            case CYAN_STAINED_GLASS_PANE:
+            case LIGHT_BLUE_STAINED_GLASS_PANE:
+            case LIGHT_GRAY_STAINED_GLASS_PANE:
+            case LIME_STAINED_GLASS_PANE:
+            case MAGENTA_STAINED_GLASS_PANE:
+            case ORANGE_STAINED_GLASS_PANE:
+            case PINK_STAINED_GLASS_PANE:
+            case PURPLE_STAINED_GLASS_PANE:
+            case RED_STAINED_GLASS_PANE:
+            case WHITE_STAINED_GLASS_PANE:
+            case YELLOW_STAINED_GLASS_PANE:
+                return false;
+        }
+
+        // fence
+        switch (footer.getType()) {
+            case IRON_BARS:
+            case IRON_TRAPDOOR:
             case ACACIA_FENCE:
             case BIRCH_FENCE:
             case DARK_OAK_FENCE:
@@ -123,6 +374,58 @@ public class LCommandTask extends BukkitRunnable {
             case SPRUCE_FENCE_GATE:
                 return false;
         }
+
+        // wall
+        switch (footer.getType()) {
+            case WALL_TORCH:
+            case COBBLESTONE_WALL:
+            case ANDESITE_WALL:
+            case BRICK_WALL:
+            case DIORITE_WALL:
+            case END_STONE_BRICK_WALL:
+            case GRANITE_WALL:
+            case MOSSY_COBBLESTONE_WALL:
+            case MOSSY_STONE_BRICK_WALL:
+            case NETHER_BRICK_WALL:
+            case PRISMARINE_WALL:
+            case RED_NETHER_BRICK_WALL:
+            case RED_SANDSTONE_WALL:
+            case SANDSTONE_WALL:
+            case STONE_BRICK_WALL:
+                return false;
+        }
+
+        // door
+        switch (footer.getType()) {
+            case DARK_OAK_DOOR:
+            case ACACIA_DOOR:
+            case BIRCH_DOOR:
+            case IRON_DOOR:
+            case JUNGLE_DOOR:
+            case OAK_DOOR:
+            case SPRUCE_DOOR:
+            case ACACIA_TRAPDOOR:
+            case BIRCH_TRAPDOOR:
+            case DARK_OAK_TRAPDOOR:
+            case IRON_TRAPDOOR:
+            case JUNGLE_TRAPDOOR:
+            case OAK_TRAPDOOR:
+            case SPRUCE_TRAPDOOR:
+                return false;
+        }
+
+        // wall sign
+        switch (footer.getType()) {
+            case ACACIA_WALL_SIGN:
+            case BIRCH_WALL_SIGN:
+            case DARK_OAK_WALL_SIGN:
+            case JUNGLE_WALL_SIGN:
+            case OAK_WALL_SIGN:
+            case SPRUCE_WALL_SIGN:
+                return false;
+        }
+
+        // bottom slab
         switch (footer.getType()) {
             case SANDSTONE_SLAB:
             case SMOOTH_QUARTZ_SLAB:
@@ -163,6 +466,8 @@ public class LCommandTask extends BukkitRunnable {
                     return false;
                 }
         }
+
+        // bottom stairs
         switch (footer.getType()) {
             case SANDSTONE_STAIRS:
             case ACACIA_STAIRS:
@@ -199,6 +504,7 @@ public class LCommandTask extends BukkitRunnable {
                     return false;
                 }
         }
+
         return true;
     }
 
