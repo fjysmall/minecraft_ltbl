@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+build/
+run/
+out/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+bin/
+.classpath
+.project
+.settings/
+
+# local smoke-test logs
+*.log

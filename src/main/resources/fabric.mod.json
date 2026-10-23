@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "ltbl",
+	"version": "${version}",
+	"name": "Let There Be Light",
+	"description": "Command-only light overlay: marks the blocks where hostile mobs can spawn.",
+	"authors": [
+		"FJYsmall",
+		"Nalley"
+	],
+	"environment": "server",
+	"entrypoints": {
+		"main": [
+			"team.imcc.ltbl.LtblMod"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
